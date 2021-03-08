@@ -1,16 +1,51 @@
 # The URL the site will be built for
 base_url = "https://saidgeek.land"
-
-# Whether to automatically compile all Sass files in the sass directory
+title = "saidgeek"
+description = "El blog de un programador"
+generate_feed = true
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+
+theme = "anatole-zola"
+default_language = "es"
+
+languages = [
+  { code = "en", feed = true, search = true },
+]
+
 
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "dracula"
+
+[translations.es]
+about = "Sobre mí"
+home = "Inicio"
+tags = "Tags"
+archive = "Archivos"
+links = "Enlaces"
+next_page = "Página siguiente"
+last_page = "Página anterior"
+description = "El blog de un programador"
+
+[translations.en]
+about = "About"
+home = "Home"
+tags = "Tags"
+archive = "Archive"
+links = "Links"
+next_page = "Next Page"
+last_page = "Last Page"
+description = "The blog of a programmer"
+
+[extra.social]
+github = "saidgeek"
+twitter = "saidgeek"
 
 [extra]
 # Put all your custom variables here
+
+[extra.show]
+tags = true

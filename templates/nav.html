@@ -1,0 +1,23 @@
+<div class="nav">
+  <li>
+    <a {% if current_path == "/" or current_path is starting_with("/page/") %}class="current"{% endif %} href="{{ get_url(path="@/_index.md") }}">
+      {{ trans(key="home", lang=lang) }}
+    </a>
+  </li>
+  <li>
+    <a {% if current_path is starting_with("/about") %}class="current"{% endif %} href="{{ get_url(path="@/about/_index.md") }}">{{ trans(key="about", lang=lang) }}</a>
+  </li>
+  {%- if config.extra.show.tags -%}
+    <li>
+      <a {% if current_path is starting_with("/tags") %}class="current"{% endif %} href="{{ get_url(path="@/_index.md") }}tags">{{ trans(key="tags", lang=lang) }}</a>
+    </li>
+  {%- endif -%}
+  <li>
+    <a {% if current_path is starting_with("/archive") %}class="current"{% endif %} href="{{ get_url(path="@/archive/_index.md") }}">{{ trans(key="archive", lang=lang) }}</a>
+  </li>
+  {%- if config.extra.show.links -%}
+    <li>
+      <a {% if current_path is starting_with("/links") %}class="current"{% endif %} href="{{ get_url(path="@/links/_index.md") }}">{{ trans(key="links", lang=lang) }}</a>
+    </li>
+  {%- endif -%}
+</div>
